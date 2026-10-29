@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sparring - ArenaKu</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="sparring">
+  <div id="site-header"></div>
+
+  <div class="page-head">
+    <div class="container row">
+      <div>
+        <h1>Sparring / Cari Lawan Tanding</h1>
+        <p>Jelajahi slot sparring yang terbuka. Login hanya diminta saat kamu menekan “Tantang / Bergabung”.</p>
+      </div>
+      <button type="button" class="btn btn-aksen" id="btn-buat">+ Buat Postingan Sparring</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card toolbar" style="grid-template-columns:repeat(3,1fr)">
+      <div class="field"><label for="s-cabang">Cabang olahraga</label><select id="s-cabang"></select></div>
+      <div class="field"><label for="s-level">Level skill</label>
+        <select id="s-level"><option value="">Semua level</option><option>Pemula</option><option>Menengah</option><option>Lanjutan</option></select></div>
+      <div class="field"><label for="s-biaya">Skema biaya</label>
+        <select id="s-biaya"><option value="">Semua skema</option><option>Patungan</option><option>Gratis</option><option>Ditanggung Pembuat Listing</option></select></div>
+    </div>
+    <div class="hasil-bar" style="margin-top:20px"><strong id="jumlah"></strong></div>
+    <div class="grid grid-3" id="daftar-sparring" style="padding-bottom:64px"></div>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="js/app.js"></script>
+  <script src="js/sparring.js"></script>
+</body>
+</html>
