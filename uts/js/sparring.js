@@ -2,6 +2,7 @@
 /* ArenaKu - sparring.js: daftar sparring, filter, buat postingan, tantang/bergabung */
 (async () => {
   const { $, $$, esc } = App;
+  $("#daftar-sparring").innerHTML = App.skeleton(3);
   const [venues, awal] = await Promise.all([App.getVenues(), App.getSparring()]);
   const vmap = App.venueMap(venues);
   const q = App.qs();

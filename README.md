@@ -24,7 +24,7 @@ konfirmasi booking, membuat postingan sparring, atau menekan "Tantang / Bergabun
 
 Pengerjaan berfokus pada frontend (HTML, CSS, JavaScript murni, tanpa framework dan backend).
 Data berupa data dummy pada file JSON (`data/`) dengan cakupan **seluruh Pulau Jawa**
-(80 venue, 6 provinsi, 56 kota/kabupaten; prioritas Madiun, Magetan, Ngawi). Login, role, dan
+(40 venue dengan 96 lapangan, 6 provinsi, 30 kota/kabupaten; prioritas Madiun, Magetan, Ngawi). Login, role, dan
 booking disimulasikan di browser memakai `localStorage`; tahap backend (PHP + MySQL) dikerjakan pada UAS.
 
 ## Fitur yang Diimplementasikan
@@ -41,6 +41,11 @@ booking disimulasikan di browser memakai `localStorage`; tahap backend (PHP + My
 10. **Sparring**: daftar slot terbuka, filter, buat postingan, dan tombol Tantang/Bergabung (login diminta saat ditekan).
 11. **Jadwal Lapangan** berbasis kalender, **Tentang Kami**, dan **Kontak Kami** (formulir tervalidasi dengan verifikasi hitung sederhana; pesan tampil di dashboard admin).
 12. Validasi form, escape input terhadap injeksi HTML, dan tampilan responsif (ponsel, tablet, desktop).
+13. **Mode gelap dan animasi**: tombol tema terang/gelap di navbar (pilihan tersimpan dan mengikuti pengaturan perangkat), transisi halus, kartu muncul bertahap, bagian halaman muncul saat di-scroll, angka statistik berhitung naik, dan *skeleton loading* saat data dimuat. Animasi otomatis dimatikan untuk pengguna yang memilih "kurangi gerakan".
+14. **Bukti booking (cetak / PDF) dengan QR Code**: halaman `bukti.html` berisi kode booking unik, detail pesanan, dan QR Code (dibuat dengan kode sendiri di `js/qr.js`, tanpa library). Tombol "Cetak / Simpan PDF" memakai dialog cetak browser (pilih *Save as PDF*). Hanya pemilik booking dan admin yang dapat membukanya. Admin dapat menempel isi QR (`ARENAKU:ARK-XXXXXX`) ke kolom check-in.
+15. **Ulasan dan rating**: setelah booking berstatus Selesai, user dapat memberi 1-5 bintang dan komentar (dari Profil atau halaman venue), mengubah, atau menghapusnya. Rating venue dihitung gabungan dari data dummy dan ulasan nyata, dan admin dapat memoderasi ulasan.
+16. **Chat sparring**: penantang dapat chat dengan PIC, dan pembuat postingan dapat chat dengan setiap penantang (modal chat, pesan cepat, penanda mengetik). Pesan tersimpan di browser. Untuk postingan contoh, balasan PIC dibuat otomatis (simulasi).
+17. **Grafik dashboard admin**: pendapatan per bulan (6 bulan terakhir) dan jumlah booking per olahraga, dibuat dengan SVG murni, lengkap dengan tooltip dan tampilan tabel.
 
 ## Akun Demo (Hanya untuk Pengujian)
 
@@ -62,14 +67,20 @@ Di dashboard admin tersedia tombol **Tambah Data Contoh** (mengisi booking dummy
   - `sparring.html`: Sparring / cari lawan tanding.
   - `profil.html`: Profil user, riwayat booking dan sparring, logout.
   - `admin.html`: Dashboard Admin.
+  - `bukti.html`: Bukti booking (cetak/PDF) dengan QR Code.
   - `kontak.html`: Kontak Kami.
   - `tentang.html`: Tentang Kami.
   - `css/style.css`: Seluruh gaya tampilan.
   - `js/app.js`: Modul bersama (data, auth/role, navbar, modal, booking, kartu).
   - `js/calendar.js`: Komponen kalender bulanan.
   - `js/gallery.js`: Komponen galeri slider dan lightbox.
+  - `js/theme.js`: Penerap tema terang/gelap (dimuat di `<head>`).
+  - `js/qr.js`: Pembuat QR Code.
+  - `js/chat.js`: Chat sparring.
+  - `js/charts.js`: Grafik SVG dashboard admin.
+  - `js/bukti.js`: Logika halaman bukti booking.
   - `js/home.js`, `venue.js`, `detail.js`, `jadwal.js`, `sparring.js`, `profil.js`, `admin.js`, `kontak.js`: Logika per halaman.
-  - `data/venues.json`: Data dummy venue dan lapangan (80 venue se-Jawa).
+  - `data/venues.json`: Data dummy venue dan lapangan (40 venue, 96 lapangan, se-Jawa).
   - `data/sparring.json`: Data dummy slot sparring.
   - `assets/img/`: Tempat foto venue; `assets/img/default/` berisi ilustrasi lapangan bawaan (SVG).
   - `screenshots/`: Bukti visual hasil implementasi.
@@ -109,6 +120,12 @@ Screenshot tersimpan di folder `uts/screenshots/`:
 | 12 | `12-dashboard-admin.png` | Dashboard Admin |
 | 13 | `13-kontak.png` | Kontak Kami |
 | 14 | `14-mobile-detail.png` | Tampilan mobile |
+| 15 | `15-bukti-booking.png` | Bukti booking dengan QR Code |
+| 16 | `16-mode-gelap.png` | Mode gelap (Sewa Lapangan) |
+| 17 | `17-chat-sparring.png` | Chat sparring |
+| 18 | `18-form-ulasan.png` | Form ulasan dan rating |
+| 19 | `19-ulasan-venue.png` | Ulasan pengguna di halaman venue |
+| 20 | `20-admin-gelap.png` | Dashboard admin dengan grafik (mode gelap) |
 
 ## Referensi
 

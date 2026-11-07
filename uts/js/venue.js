@@ -2,6 +2,7 @@
 /* ArenaKu - venue.js: daftar venue, pencarian, filter lokasi/olahraga/harga, pengurutan */
 (async () => {
   const { $, $$, esc } = App;
+  $("#daftar-venue").innerHTML = App.skeleton(6);
   const venues = await App.getVenues();
   const q = App.qs();
   const tanggal = App.validTanggal(q.get("tanggal")) ? q.get("tanggal") : "";
@@ -44,8 +45,8 @@
     const skorWilayah = (v) => (App.PRIORITAS.includes(v.kota) ? 0 : 1);
     if (urut === "murah") hasil.sort((a, b) => a.harga - b.harga);
     else if (urut === "mahal") hasil.sort((a, b) => b.harga - a.harga);
-    else if (urut === "rating") hasil.sort((a, b) => (b.rating || 0) - (a.rating || 0));
-    else hasil.sort((a, b) => skorWilayah(a) - skorWilayah(b) || (b.rating || 0) - (a.rating || 0));
+    else if (urut === "rating") hasil.sort((a, b) => App.ratingInfo(b).rating - App.ratingInfo(a).rating);
+    else hasil.sort((a, b) => skorWilayah(a) - skorWilayah(b) || App.ratingInfo(b).rating - App.ratingInfo(a).rating);
 
     hasilKini = hasil;
     $("#jumlah").textContent = `${hasil.length} venue ditemukan`;

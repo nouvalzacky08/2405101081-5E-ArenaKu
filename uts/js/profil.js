@@ -28,13 +28,13 @@
   function sparringSaya() {
     const joins = App.getJoins();
     const dariJoin = joins.filter((j) => j.email === me.email && !j.hiddenUser).map((j) => ({
-      jenis: "join", id: j.id, tim: j.tim, pic: j.pic, venue_id: j.venue_id, olahraga: j.olahraga,
+      jenis: "join", id: j.id, sparId: j.sparId, tim: j.tim, pic: j.pic, venue_id: j.venue_id, olahraga: j.olahraga,
       tanggal: j.tanggal, jam: `${j.jam_mulai}`, dibuat: j.dibuat, lawan: j.tim, kontak: j.kontak
     }));
     const dariPost = App.store.get("arenaku_sparring", []).filter((s) => s.email === me.email && !s.hiddenUser).map((s) => {
       const penantang = joins.filter((j) => j.sparId === s.id).map((j) => j.nama);
       return {
-        jenis: "post", id: s.id, tim: s.tim, pic: s.pic, venue_id: s.venue_id, olahraga: s.olahraga,
+        jenis: "post", id: s.id, sparId: s.id, tim: s.tim, pic: s.pic, venue_id: s.venue_id, olahraga: s.olahraga,
         tanggal: s.tanggal, jam: s.jam_mulai, dibuat: s.dibuat || s.tanggal, lawan: penantang.length ? penantang.join(", ") : "", kontak: s.kontak
       };
     });
@@ -43,6 +43,14 @@
   const bisaHapusS = (s) => s.jenis === "join" || s.tanggal < hariIni();
 
   const pillStatus = (s) => ({ Pending: "st-pending", Selesai: "st-selesai", Dibatalkan: "st-batal" }[s] || "st-menunggu");
+
+  function ulasanBtn(b) {
+    if (b.status !== "Selesai") return "";
+    const u = App.getUlasan().find((x) => x.kode === b.kode);
+    return u
+      ? `<span class="small">${App.bintangHtml(u.bintang)}</span><button type="button" class="btn btn-outline btn-xs" data-act="ulasan" data-id="${esc(b.kode)}">✎ Ubah ulasan</button>`
+      : `<button type="button" class="btn btn-primary btn-xs" data-act="ulasan" data-id="${esc(b.kode)}">⭐ Beri ulasan</button>`;
+  }
 
   function itemBooking(b) {
     const v = vmap.get(b.venueId);
@@ -56,6 +64,8 @@
       <p class="meta">📅 ${esc(App.fmtTanggal(b.tanggal))} · 🕒 ${App.jamRange(b.jam)}</p>
       <p class="meta">💸 ${rupiah(b.total)} (${esc(b.metode)}) · dipesan ${esc(App.fmtWaktu(b.dibuat))}</p>
       <div class="hist-act">
+        <a class="btn btn-outline btn-xs" href="bukti.html?kode=${encodeURIComponent(b.kode)}">🧾 Bukti &amp; QR</a>
+        ${ulasanBtn(b)}
         ${aktif ? `<button type="button" class="btn btn-outline btn-xs" data-act="batal" data-id="${esc(b.kode)}">Batalkan booking</button>
           <span class="muted small">Booking aktif. Batalkan dulu jika ingin menghapusnya dari riwayat.</span>`
           : `<button type="button" class="btn btn-danger btn-xs" data-act="hapus-b" data-id="${esc(b.kode)}">🗑 Hapus dari riwayat</button>`}
@@ -77,6 +87,7 @@
       <p class="meta">📍 ${v ? `<a href="detail.html?id=${v.id}">${esc(v.nama)}</a> · ${esc(v.kota)}` : "Venue tidak diketahui"}</p>
       <p class="meta">📅 ${esc(App.fmtTanggal(s.tanggal))} · 🕒 ${esc(s.jam)} · ${esc(s.olahraga)}</p>
       <div class="hist-act">
+        <button type="button" class="btn btn-outline btn-xs" data-act="chat" data-id="${esc(s.sparId)}">💬 Chat</button>
         ${bisaHapusS(s) ? `<button type="button" class="btn btn-danger btn-xs" data-act="hapus-s" data-kind="${s.jenis}" data-id="${esc(s.id)}">🗑 Hapus dari riwayat</button>`
           : '<span class="muted small">Postingan masih aktif. Bisa dihapus setelah tanggal sparring lewat.</span>'}
       </div></article>`;
@@ -176,6 +187,12 @@
     const act = e.target.closest("[data-act]");
     if (act) {
       const { act: aksi, id, kind } = act.dataset;
+      if (aksi === "ulasan") { App.openUlasan(App.getBookings().find((b) => b.kode === id), render); return; }
+      if (aksi === "chat") {
+        const sp = sparAll.find((x) => x.id === id);
+        if (sp && App.openChat) App.openChat(sp, vmap); else App.toast("Data sparring tidak ditemukan.");
+        return;
+      }
       if (aksi === "batal") {
         if (!(await App.confirmBox({ judul: "Batalkan booking?", teks: `Booking ${id} akan dibatalkan dan slot jam dibuka kembali untuk pengguna lain.`, ok: "Ya, batalkan", batal: "Tidak", bahaya: true }))) return;
         App.saveBookings(App.getBookings().map((b) => (b.kode === id ? { ...b, status: "Dibatalkan" } : b)));

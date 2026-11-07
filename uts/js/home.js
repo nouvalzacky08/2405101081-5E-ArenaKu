@@ -16,6 +16,7 @@
     })
   );
 
+  $("#venue-list").innerHTML = App.skeleton(4);
   const [venues, sparring] = await Promise.all([App.getVenues(), App.getSparring()]);
   const vmap = App.venueMap(venues);
   const sports = App.sportList(venues);
@@ -43,10 +44,10 @@
   });
 
   // Statistik
-  $("#st-venue").textContent = venues.length;
-  $("#st-kota").textContent = new Set(venues.map((v) => v.kota)).size;
-  $("#st-lap").textContent = venues.reduce((n, v) => n + v.lapangan.length, 0);
-  $("#st-spar").textContent = sparring.length;
+  App.countUp($("#st-venue"), venues.length);
+  App.countUp($("#st-kota"), new Set(venues.map((v) => v.kota)).size);
+  App.countUp($("#st-lap"), venues.reduce((n, v) => n + v.lapangan.length, 0));
+  App.countUp($("#st-spar"), sparring.length);
 
   // Kartu cabang olahraga
   $("#olahraga-list").innerHTML = sports.map((s) => {
@@ -66,7 +67,7 @@
   const nama = Object.keys(WILAYAH);
   function tampilVenue(w) {
     $$("#region-chips .chip").forEach((c) => c.classList.toggle("aktif", c.dataset.w === w));
-    const daftar = venues.filter(WILAYAH[w]).sort((a, b) => (b.rating || 0) - (a.rating || 0)).slice(0, 4);
+    const daftar = venues.filter(WILAYAH[w]).sort((a, b) => App.ratingInfo(b).rating - App.ratingInfo(a).rating).slice(0, 4);
     $("#venue-list").innerHTML = daftar.map((v) => App.venueCard(v)).join("");
   }
   $("#region-chips").innerHTML = nama.map((w) => `<button type="button" class="chip" data-w="${esc(w)}">${esc(w)}</button>`).join("");

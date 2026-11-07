@@ -16,9 +16,12 @@
 
   const sp = App.SPORT[v.olahraga[0]];
   const bcls = v.badge === "COMING SOON" ? "soon" : v.badge === "PROMO" ? "promo" : "sport";
-  const rating = v.rating
-    ? `<span class="rating">★ ${v.rating.toFixed(2)}</span> <span class="muted">(${v.ulasan} ulasan)</span>`
-    : '<span class="muted">Belum ada ulasan</span>';
+  const ratingHtml = () => {
+    const ri = App.ratingInfo(v);
+    return ri.jumlah
+      ? `<span class="rating">★ ${ri.rating.toFixed(2)}</span> <span class="muted">(${ri.jumlah} ulasan)</span>`
+      : '<span class="muted">Belum ada ulasan</span>';
+  };
   const maps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.nama + " " + v.kota)}`;
   const mingguan = (l) => `${rupiah(l.harga)} <span class="muted small">/ jam</span>`;
   const akhirPekan = (l) => rupiah(App.hargaTanggal(l, "2026-11-07")); // 7 Nov 2026 = Sabtu (selalu akhir pekan)
@@ -31,7 +34,7 @@
         <span class="label ${bcls}" style="margin-bottom:8px">${esc(v.badge || v.olahraga[0])}</span>
         <h1>${esc(v.nama)}</h1>
         <p class="venue-meta">📍 ${esc(v.kota)}, ${esc(v.provinsi)} · <a class="maps-link" href="${maps}" target="_blank" rel="noopener">Lihat di peta</a></p>
-        <p>${rating}</p>
+        <p id="rating-line">${ratingHtml()}</p>
         <div class="tags">${v.olahraga.map((o) => `<span class="tag">${esc(o)}</span>`).join("")}</div>
         <div class="card">
           <h2>Tentang venue</h2>
@@ -53,6 +56,7 @@
             <li>Kerusakan fasilitas akibat kelalaian penyewa menjadi tanggung jawab penyewa.</li>
           </ul>
         </div>
+        <div class="card" id="ulasan"></div>
       </div>
 
       <aside class="card booking-panel" id="panel">
@@ -77,6 +81,29 @@
     { html: `<div class="gal-ph" style="background:${sp.warna}"><span>${sp.ikon}</span><p>${esc(v.nama)}</p></div>`, caption: "Foto asli belum diunggah." }
   ];
   App.gallery($("#galeri"), { items, alt: `Foto ${v.nama}` });
+
+  /* ----- Ulasan pengguna ----- */
+  function renderUlasan() {
+    const ri = App.ratingInfo(v), daftar = App.ulasanVenue(v.id), me = App.getUser();
+    $("#rating-line").innerHTML = ratingHtml();
+    // Booking milik user yang sudah Selesai di venue ini dan belum diulas
+    const bisa = me && me.role !== "admin"
+      ? App.getBookings().filter((b) => b.email === me.email && b.venueId === v.id && b.status === "Selesai" && !daftar.some((u) => u.kode === b.kode))
+      : [];
+    $("#ulasan").innerHTML = `<h2>Ulasan pengguna</h2>
+      <div class="ulasan-ringkas">
+        ${ri.jumlah ? `<div class="skor">${ri.rating.toFixed(1)}</div><div>${App.bintangHtml(ri.rating)}<br><span class="muted small">${ri.jumlah} ulasan${ri.user ? ` · ${ri.user} dari pengguna ArenaKu` : ""}</span></div>`
+          : '<span class="muted">Belum ada ulasan untuk venue ini.</span>'}
+        ${bisa.length ? `<button type="button" class="btn btn-primary btn-sm" id="tulis-ulasan">⭐ Tulis ulasan</button>` : ""}
+      </div>
+      ${daftar.length ? daftar.map((u) => `<div class="ulasan-item"><div class="atas"><strong>${esc(u.nama)}${me && me.email === u.email ? ' <span class="pill st-selesai">Ulasanmu</span>' : ""}</strong>
+          <span>${App.bintangHtml(u.bintang)} <span class="muted small">${esc(App.fmtWaktu(u.waktu))}</span></span></div>
+          ${u.teks ? `<p>${esc(u.teks)}</p>` : '<p class="muted small">Tanpa komentar.</p>'}</div>`).join("")
+        : '<p class="muted small">Ulasan bisa ditulis setelah booking berstatus <strong>Selesai</strong> (sudah check-in). Cari tombolnya di halaman ini atau di Profil → Riwayat Booking.</p>'}`;
+    const t = $("#tulis-ulasan");
+    if (t) t.addEventListener("click", () => App.openUlasan(bisa[0], renderUlasan));
+  }
+  renderUlasan();
 
   if (v.coming_soon) return;
 
@@ -172,7 +199,7 @@
           <div><span>Total</span><strong>${rupiah(b.total)} (${esc(b.metode)})</strong></div>
           <div><span>Status</span><strong>${esc(b.status)} · ${esc(b.bayar)}</strong></div>
         </div>
-        <div class="row-btn"><a class="btn btn-outline" href="profil.html#riwayat">Lihat Riwayat</a><button type="button" class="btn btn-primary" data-close>Selesai</button></div>`, { cls: "modal-sm" });
+        <div class="row-btn"><a class="btn btn-outline" href="bukti.html?kode=${encodeURIComponent(b.kode)}">🧾 Bukti &amp; QR</a><a class="btn btn-outline" href="profil.html#riwayat">Riwayat</a><button type="button" class="btn btn-primary" data-close>Selesai</button></div>`, { cls: "modal-sm" });
       ok.$("[data-close]").addEventListener("click", ok.close);
       gambarSlot();
     });

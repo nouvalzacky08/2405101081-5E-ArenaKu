@@ -32,6 +32,43 @@ const App = (() => {
     del(k) { try { localStorage.removeItem(k); } catch { /* abaikan */ } }
   };
 
+
+  /* ---------- Tema terang/gelap, skeleton, animasi ---------- */
+  const tema = () => document.documentElement.getAttribute("data-theme") || "light";
+  function setTema(t, simpan = true) {
+    const root = document.documentElement;
+    root.classList.add("tema-ganti");
+    root.setAttribute("data-theme", t);
+    if (simpan) { try { localStorage.setItem("arenaku_tema", t); } catch { /* abaikan */ } } // teks polos, dibaca theme.js
+    const b = $("#tema-btn");
+    if (b) { b.textContent = t === "dark" ? "☀️" : "🌙"; b.setAttribute("aria-label", t === "dark" ? "Ganti ke tema terang" : "Ganti ke tema gelap"); b.title = b.getAttribute("aria-label"); }
+    setTimeout(() => root.classList.remove("tema-ganti"), 450);
+  }
+  /** Kerangka kartu venue saat data sedang dimuat. */
+  const skeleton = (n = 6) => Array.from({ length: n }, () => `<div class="skel-card" aria-hidden="true">
+    <div class="skel skel-foto"></div><div class="skel-body"><div class="skel skel-baris w80"></div><div class="skel skel-baris w60"></div><div class="skel skel-baris w40"></div></div></div>`).join("");
+  /** Angka yang menghitung naik dari 0 (dipakai pada statistik). */
+  function countUp(el, target, durasi = 900) {
+    if (!el) return;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches || target < 2) { el.textContent = target; return; }
+    const t0 = performance.now();
+    const langkah = (t) => {
+      const p = Math.min(1, (t - t0) / durasi);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(langkah);
+    };
+    requestAnimationFrame(langkah);
+  }
+  /** Bagian halaman muncul perlahan saat di-scroll. */
+  function initReveal() {
+    if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const els = $$(".section-title, .section-sub, .langkah, .keunggulan, .testimoni, .faq-item, .cta .container, .kontak-grid > *, .tentang-grid > *");
+    if (!els.length) return;
+    document.documentElement.classList.add("anim");
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("tampil"); io.unobserve(e.target); } }), { threshold: 0.12 });
+    els.forEach((el) => { el.classList.add("reveal"); io.observe(el); });
+  }
+
   /* ---------- Tanggal & waktu (selalu mengikuti jam perangkat) ---------- */
   const pad = (n) => String(n).padStart(2, "0");
   const toISO = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
@@ -83,6 +120,72 @@ const App = (() => {
   };
   /** Field `foto` di venues.json boleh berupa teks tunggal atau daftar (array) path gambar. */
   const fotosOf = (v) => (Array.isArray(v.foto) ? v.foto : v.foto ? [v.foto] : []).filter(Boolean);
+
+
+  /* ---------- Ulasan & rating ---------- */
+  const getUlasan = () => store.get("arenaku_ulasan", []);
+  const saveUlasan = (a) => store.set("arenaku_ulasan", a);
+  const ulasanVenue = (id) => getUlasan().filter((x) => x.venueId === id).sort((a, b) => b.waktu.localeCompare(a.waktu));
+  /** Rating gabungan: data dummy venue + ulasan nyata dari pengguna di browser ini. */
+  function ratingInfo(v) {
+    const u = getUlasan().filter((x) => x.venueId === v.id);
+    const n0 = v.rating ? v.ulasan : 0;
+    const n = n0 + u.length;
+    if (!n) return { rating: 0, jumlah: 0, user: 0 };
+    return { rating: ((v.rating || 0) * n0 + u.reduce((a, x) => a + x.bintang, 0)) / n, jumlah: n, user: u.length };
+  }
+  const bintangHtml = (n) => {
+    const r = Math.round(n);
+    return `<span class="stars" aria-label="${r} dari 5 bintang">${"★".repeat(r)}<span class="off">${"★".repeat(5 - r)}</span></span>`;
+  };
+
+  /** Modal tulis/ubah ulasan untuk booking yang sudah Selesai. Dipakai di profil dan halaman detail. */
+  function openUlasan(b, onSaved) {
+    const me = getUser();
+    if (!me || me.email !== b.email) return;
+    const ada = getUlasan().find((x) => x.kode === b.kode);
+    let bintang = ada ? ada.bintang : 0;
+    const LABEL = ["", "Kurang baik", "Cukup", "Baik", "Sangat baik", "Luar biasa!"];
+    const m = openModal(`<h2>${ada ? "Ubah ulasan" : "Tulis ulasan"}</h2>
+      <p class="muted">${esc(b.venueNama)} · ${esc(b.lapNama)}<br>${esc(fmtTanggal(b.tanggal))}</p>
+      <label class="small"><strong>Penilaianmu</strong> <span class="muted" id="u-label"></span></label>
+      <div class="bintang-pilih" id="u-bintang" role="radiogroup" aria-label="Pilih bintang">
+        ${[1, 2, 3, 4, 5].map((n) => `<button type="button" data-n="${n}" role="radio" aria-label="${n} bintang">★</button>`).join("")}</div>
+      <div class="form-group"><label for="u-teks">Ceritakan pengalamanmu (opsional)</label>
+        <textarea id="u-teks" rows="4" maxlength="280" placeholder="Lapangannya bagus, fasilitasnya lengkap...">${esc(ada ? ada.teks : "")}</textarea>
+        <div class="hitung"><span id="u-hit">0</span>/280</div><div class="error" id="u-err"></div></div>
+      <div class="row-btn">${ada ? '<button type="button" class="btn btn-danger" id="u-hapus">Hapus ulasan</button>' : ""}
+        <button type="button" class="btn btn-primary" id="u-simpan">Simpan ulasan</button></div>`, { cls: "modal-sm" });
+    const gambar = (hover = bintang) => {
+      m.$$("#u-bintang button").forEach((bt) => bt.classList.toggle("on", Number(bt.dataset.n) <= hover));
+      m.$("#u-label").textContent = hover ? `· ${LABEL[hover]}` : "";
+    };
+    gambar();
+    const hit = () => { m.$("#u-hit").textContent = m.$("#u-teks").value.length; };
+    hit();
+    m.$("#u-teks").addEventListener("input", hit);
+    m.$("#u-bintang").addEventListener("click", (e) => { const bt = e.target.closest("button"); if (bt) { bintang = Number(bt.dataset.n); m.$("#u-err").textContent = ""; gambar(); } });
+    m.$("#u-bintang").addEventListener("mouseover", (e) => { const bt = e.target.closest("button"); if (bt) gambar(Number(bt.dataset.n)); });
+    m.$("#u-bintang").addEventListener("mouseleave", () => gambar());
+    m.$("#u-simpan").addEventListener("click", () => {
+      if (!bintang) { m.$("#u-err").textContent = "Pilih jumlah bintang dulu."; return; }
+      const rest = getUlasan().filter((x) => x.kode !== b.kode);
+      rest.push({ id: "u" + Date.now(), kode: b.kode, venueId: b.venueId, venueNama: b.venueNama, email: me.email, nama: me.nama,
+        bintang, teks: m.$("#u-teks").value.trim(), waktu: new Date().toISOString() });
+      saveUlasan(rest);
+      m.close();
+      toast("Terima kasih! Ulasanmu tersimpan.");
+      if (onSaved) onSaved();
+    });
+    const hapus = m.$("#u-hapus");
+    if (hapus) hapus.addEventListener("click", async () => {
+      if (!(await confirmBox({ judul: "Hapus ulasan?", teks: "Ulasanmu untuk booking ini akan dihapus.", ok: "Hapus", bahaya: true }))) return;
+      saveUlasan(getUlasan().filter((x) => x.kode !== b.kode));
+      m.close();
+      toast("Ulasan dihapus.");
+      if (onSaved) onSaved();
+    });
+  }
 
   /* ---------- Sparring ---------- */
   async function getSparring({ semua = false } = {}) {
@@ -405,8 +508,9 @@ const App = (() => {
     const bcls = v.badge === "COMING SOON" ? "soon" : v.badge === "PROMO" ? "promo" : "sport";
     const foto = fotosOf(v)[0];
     const img = foto ? `<img src="${esc(foto)}" alt="${esc(v.nama)}" loading="lazy" onerror="this.remove()">` : "";
-    const rating = v.rating
-      ? `<span class="rating">★ ${v.rating.toFixed(2)}</span> <span class="muted">(${v.ulasan} ulasan)</span>`
+    const ri = ratingInfo(v);
+    const rating = ri.jumlah
+      ? `<span class="rating">★ ${ri.rating.toFixed(2)}</span> <span class="muted">(${ri.jumlah} ulasan)</span>`
       : '<span class="muted">Belum ada ulasan</span>';
     const harga = v.coming_soon ? '<span class="muted">Segera hadir</span>' : `Mulai <strong>${rupiah(v.harga)}</strong> / sesi`;
     return `<a class="card venue-card" href="detail.html?id=${v.id}${extra}">
@@ -435,9 +539,11 @@ const App = (() => {
     const joined = !!(me && getJoins().some((j) => j.sparId === s.id && j.email === me.email));
     const jumlah = getJoins().filter((j) => j.sparId === s.id).length;
     const tombol = milik
-      ? '<button type="button" class="btn btn-outline btn-block" disabled>Postinganmu</button>'
+      ? `<div class="btn-row"><button type="button" class="btn btn-outline btn-block" disabled>Postinganmu</button>
+          <button type="button" class="btn btn-primary btn-block" data-chat="${esc(s.id)}">💬 Chat penantang${jumlah ? ` (${jumlah})` : ""}</button></div>`
       : joined
-        ? '<button type="button" class="btn btn-outline btn-block" disabled>Permintaan terkirim ✓</button>'
+        ? `<div class="btn-row"><button type="button" class="btn btn-outline btn-block" disabled>Permintaan terkirim ✓</button>
+            <button type="button" class="btn btn-primary btn-block" data-chat="${esc(s.id)}">💬 Chat dengan PIC</button></div>`
         : `<button type="button" class="btn btn-primary btn-block" data-join="${esc(s.id)}">Tantang / Bergabung</button>`;
     return `<article class="card spar-card">
       <div class="spar-top"><span class="label sport">${sp.ikon} ${esc(s.olahraga)}</span>
@@ -457,6 +563,12 @@ const App = (() => {
   /** Aksi "Tantang / Bergabung": login baru diminta saat tombol ditekan; hasilnya dicatat sebagai riwayat. */
   function bindSparringActions(container, getList, vmap, onChange) {
     container.addEventListener("click", (e) => {
+      const c = e.target.closest("[data-chat]");
+      if (c) {
+        const sc = getList().find((x) => x.id === c.dataset.chat);
+        if (sc) requireLogin(() => (App.openChat ? App.openChat(sc, vmap, onChange) : toast("Fitur chat belum dimuat.")));
+        return;
+      }
       const b = e.target.closest("[data-join]");
       if (!b) return;
       const s = getList().find((x) => x.id === b.dataset.join);
@@ -482,8 +594,10 @@ const App = (() => {
             <li>📅 ${esc(fmtTanggal(s.tanggal))}, ${esc(jamText(s))}</li>
           </ul>
           <p class="muted small">Hubungi PIC untuk konfirmasi jadwal. Riwayatnya tersimpan di menu Profil. (Data dummy)</p>
-          <button type="button" class="btn btn-primary btn-block" data-close>Oke</button>`, { cls: "modal-sm" });
+          <div class="row-btn"><button type="button" class="btn btn-outline" data-close>Oke</button>
+          <button type="button" class="btn btn-primary" data-chat-now>💬 Chat dengan PIC</button></div>`, { cls: "modal-sm" });
         m.$("[data-close]").addEventListener("click", m.close);
+        m.$("[data-chat-now]").addEventListener("click", () => { m.close(); if (App.openChat) App.openChat(s, vmap, onChange); });
         if (onChange) onChange();
       });
     });
@@ -528,6 +642,7 @@ const App = (() => {
         <div class="nav-panel" id="nav-panel">
           <nav class="nav-menu">${MENU.map(([href, label, key]) =>
             `<a href="${href}" class="${key === page ? "aktif" : ""}">${label}</a>`).join("")}</nav>
+          <button type="button" class="tema-btn" id="tema-btn"></button>
           <div class="nav-auth" id="nav-auth"></div>
         </div>
         <button type="button" class="nav-toggle" aria-label="Buka menu" aria-expanded="false">☰</button>
@@ -546,8 +661,11 @@ const App = (() => {
       </div></footer>`;
     }
     renderAuthArea();
+    setTema(tema(), false);
+    initReveal();
 
     document.addEventListener("click", (e) => {
+      if (e.target.closest("#tema-btn")) { setTema(tema() === "dark" ? "light" : "dark"); return; }
       const dd = $("#user-dd");
       const ub = e.target.closest("#user-btn");
       if (ub && dd) {
@@ -580,6 +698,7 @@ const App = (() => {
     getUser, getUsers, saveUsers, isAdmin, emailOk, hpOk, hashPw, setError, updateUser, openAuth, requireLogin, logout,
     toast, openModal, confirmBox, bindLokasi,
     getBookings, saveBookings, addBooking, kodeUnik, aktif, slotStatus, renderSlots, slotLegend,
-    venueCard, sparringCard, bindSparringActions, jamText
+    venueCard, sparringCard, bindSparringActions, jamText,
+    tema, setTema, skeleton, countUp, getUlasan, saveUlasan, ulasanVenue, ratingInfo, bintangHtml, openUlasan
   };
 })();
