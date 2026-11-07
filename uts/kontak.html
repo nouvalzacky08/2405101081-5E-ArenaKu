@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak Kami - ArenaKu</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="kontak">
+  <div id="site-header"></div>
+
+  <section class="kontak-banner" style="padding:56px 0">
+    <div class="container"><h1>PERTANYAAN TENTANG <strong>ARENAKU</strong></h1></div>
+  </section>
+
+  <main class="container kontak-grid">
+    <div>
+      <h2>Mau ngobrol langsung dengan tim ArenaKu?</h2>
+      <p>Terima kasih sudah mengunjungi ArenaKu. Punya pertanyaan soal sewa lapangan, sparring, atau ingin mendaftarkan venue milikmu?</p>
+      <p>Tulis pesanmu di formulir ini, tim kami akan menghubungimu secepatnya.</p>
+      <div class="info-list">
+        <div class="info-item"><div class="ic">✉️</div><div><strong>Email</strong><span>halo@arenaku.example</span></div></div>
+        <div class="info-item"><div class="ic">💬</div><div><strong>WhatsApp</strong><span>0812-0000-0000</span></div></div>
+        <div class="info-item"><div class="ic">📍</div><div><strong>Kantor</strong><span>Madiun, Jawa Timur (alamat dummy)</span></div></div>
+        <div class="info-item"><div class="ic">🕒</div><div><strong>Jam layanan</strong><span>Setiap hari, 08.00 – 21.00 WIB</span></div></div>
+      </div>
+      <p style="margin-top:20px" class="small">Cari jawaban cepat? Lihat <a href="index.html#faq" class="maps-link">pertanyaan umum</a>.</p>
+    </div>
+
+    <div class="card kontak-form" id="kontak-kartu">
+      <form id="form-kontak" novalidate>
+        <div class="form-group"><label for="k-nama">Nama</label><input type="text" id="k-nama" autocomplete="name"><div class="error"></div></div>
+        <div class="form-group"><label for="k-email">Email</label><input type="email" id="k-email" autocomplete="email"><div class="error"></div></div>
+        <div class="form-group"><label for="k-hp">Nomor HP</label><input type="tel" id="k-hp" placeholder="081234567890" autocomplete="tel"><div class="error"></div></div>
+        <div class="form-group"><label for="k-domisili">Domisili</label><input type="text" id="k-domisili" placeholder="Contoh: Kota Madiun, Jawa Timur"><div class="error"></div></div>
+        <div class="form-group"><label for="k-subjek">Subjek</label><input type="text" id="k-subjek"><div class="error"></div></div>
+        <div class="form-group"><label for="k-pesan">Pertanyaan</label><textarea id="k-pesan" maxlength="600"></textarea><div class="error"></div></div>
+        <div class="cek-manusia"><span>Verifikasi: berapa <strong id="soal"></strong> ?</span><input type="text" id="k-jawab" inputmode="numeric" aria-label="Jawaban verifikasi"><span class="error" id="e-jawab" style="color:var(--merah);font-size:.8rem"></span></div>
+        <button type="submit" class="btn btn-primary">Kirim</button>
+      </form>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/app.js"></script>
+  <script src="js/kontak.js"></script>
+</body>
+</html>

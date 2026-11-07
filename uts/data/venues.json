@@ -1,0 +1,1750 @@
+[
+  {
+    "id": 1,
+    "nama": "Pandawa Social Sport",
+    "provinsi": "Jawa Timur",
+    "kota": "Kota Madiun",
+    "alamat": "Jl. Contoh Raya No. 1, Kota Madiun, Jawa Timur (alamat dummy)",
+    "olahraga": [
+      "Padel",
+      "Mini Soccer"
+    ],
+    "harga": 250000,
+    "rating": 4.88,
+    "ulasan": 214,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Pandawa Social Sport menyediakan lapangan padel, mini soccer di Kota Madiun. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [
+      "assets/img/Pandawa-Social-Sport/Foto (1).jpeg",
+      "assets/img/Pandawa-Social-Sport/Foto (2).jpeg",
+      "assets/img/Pandawa-Social-Sport/Foto (3).jpeg",
+      "assets/img/Pandawa-Social-Sport/Foto (4).jpeg",
+      "assets/img/Pandawa-Social-Sport/Foto (5).jpeg",
+      "assets/img/Pandawa-Social-Sport/Foto (6).jpeg",
+      "assets/img/Pandawa-Social-Sport/Foto (7).jpeg"
+    ],
+    "lapangan": [
+      {
+        "id": "l1-1",
+        "nama": "Lapangan Padel 1",
+        "olahraga": "Padel",
+        "harga": 250000
+      },
+      {
+        "id": "l1-2",
+        "nama": "Lapangan Padel 2",
+        "olahraga": "Padel",
+        "harga": 250000
+      },
+      {
+        "id": "l1-3",
+        "nama": "Lapangan Mini Soccer 1",
+        "olahraga": "Mini Soccer",
+        "harga": 450000
+      },
+      {
+        "id": "l1-4",
+        "nama": "Lapangan Mini Soccer 2",
+        "olahraga": "Mini Soccer",
+        "harga": 450000
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nama": "PLN UPT Madiun Sport Centre",
+    "provinsi": "Jawa Timur",
+    "kota": "Kota Madiun",
+    "alamat": "Jl. Contoh Raya No. 2, Kota Madiun, Jawa Timur (alamat dummy)",
+    "olahraga": [
+      "Tennis",
+      "Badminton"
+    ],
+    "harga": 40000,
+    "rating": 4.88,
+    "ulasan": 187,
+    "badge": "PROMO",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin"
+    ],
+    "deskripsi": "PLN UPT Madiun Sport Centre menyediakan lapangan tennis, badminton di Kota Madiun. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [
+      "assets/img/PLN-UPT-Madiun-Sport-Centre/1.jpeg",
+      "assets/img/PLN-UPT-Madiun-Sport-Centre/2.jpeg",
+      "assets/img/PLN-UPT-Madiun-Sport-Centre/3.jpeg",
+      "assets/img/PLN-UPT-Madiun-Sport-Centre/4.jpeg"
+    ],
+    "lapangan": [
+      {
+        "id": "l2-1",
+        "nama": "Lapangan Tennis 1",
+        "olahraga": "Tennis",
+        "harga": 60000
+      },
+      {
+        "id": "l2-2",
+        "nama": "Lapangan Tennis 2",
+        "olahraga": "Tennis",
+        "harga": 60000
+      },
+      {
+        "id": "l2-3",
+        "nama": "Lapangan Badminton 1",
+        "olahraga": "Badminton",
+        "harga": 40000
+      },
+      {
+        "id": "l2-4",
+        "nama": "Lapangan Badminton 2",
+        "olahraga": "Badminton",
+        "harga": 40000
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nama": "Madiun Soccer Field",
+    "provinsi": "Jawa Timur",
+    "kota": "Kabupaten Madiun",
+    "alamat": "Jl. Contoh Raya No. 3, Kabupaten Madiun, Jawa Timur (alamat dummy)",
+    "olahraga": [
+      "Mini Soccer"
+    ],
+    "harga": 500000,
+    "rating": 5.0,
+    "ulasan": 96,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Ruang Ganti",
+      "Tribun"
+    ],
+    "deskripsi": "Madiun Soccer Field menyediakan lapangan mini soccer di Kabupaten Madiun. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [
+      "assets/img/Madiun-Soccer-Field/1.jpeg",
+      "assets/img/Madiun-Soccer-Field/2.jpeg",
+      "assets/img/Madiun-Soccer-Field/3.jpeg"
+    ],
+    "lapangan": [
+      {
+        "id": "l3-1",
+        "nama": "Lapangan Mini Soccer 1",
+        "olahraga": "Mini Soccer",
+        "harga": 500000
+      },
+      {
+        "id": "l3-2",
+        "nama": "Lapangan Mini Soccer 2",
+        "olahraga": "Mini Soccer",
+        "harga": 500000
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nama": "Pickleball Mojorayung",
+    "provinsi": "Jawa Timur",
+    "kota": "Kabupaten Madiun",
+    "alamat": "Jl. Contoh Raya No. 4, Kabupaten Madiun, Jawa Timur (alamat dummy)",
+    "olahraga": [
+      "Pickleball"
+    ],
+    "harga": 35000,
+    "rating": 4.97,
+    "ulasan": 74,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin"
+    ],
+    "deskripsi": "Pickleball Mojorayung menyediakan lapangan pickleball di Kabupaten Madiun. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [
+      "assets/img/Pickleball-Mojorayung/1.jpeg",
+      "assets/img/Pickleball-Mojorayung/2.jpeg",
+      "assets/img/Pickleball-Mojorayung/3.jpeg",
+      "assets/img/Pickleball-Mojorayung/4.jpeg",
+      "assets/img/Pickleball-Mojorayung/5.jpeg"
+    ],
+    "lapangan": [
+      {
+        "id": "l4-1",
+        "nama": "Lapangan Pickleball 1",
+        "olahraga": "Pickleball",
+        "harga": 35000
+      },
+      {
+        "id": "l4-2",
+        "nama": "Lapangan Pickleball 2",
+        "olahraga": "Pickleball",
+        "harga": 35000
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "nama": "Magetan Futsal Arena",
+    "provinsi": "Jawa Timur",
+    "kota": "Kabupaten Magetan",
+    "alamat": "Jl. Contoh Raya No. 5, Kabupaten Magetan, Jawa Timur (alamat dummy)",
+    "olahraga": [
+      "Futsal"
+    ],
+    "harga": 80000,
+    "rating": 4.72,
+    "ulasan": 58,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin"
+    ],
+    "deskripsi": "Magetan Futsal Arena menyediakan lapangan futsal di Kabupaten Magetan. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [
+      "assets/img/Magetan-Futsal-Arena/1.webp"
+    ],
+    "lapangan": [
+      {
+        "id": "l5-1",
+        "nama": "Lapangan Futsal 1",
+        "olahraga": "Futsal",
+        "harga": 80000
+      },
+      {
+        "id": "l5-2",
+        "nama": "Lapangan Futsal 2",
+        "olahraga": "Futsal",
+        "harga": 80000
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "nama": "Champion Futsal Arena",
+    "provinsi": "Jawa Timur",
+    "kota": "Kabupaten Ngawi",
+    "alamat": "Jl. Contoh Raya No. 7, Kabupaten Ngawi, Jawa Timur (alamat dummy)",
+    "olahraga": [
+      "Futsal"
+    ],
+    "harga": 75000,
+    "rating": 4.65,
+    "ulasan": 49,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin"
+    ],
+    "deskripsi": "Champion Futsal Arena menyediakan lapangan futsal di Kabupaten Ngawi. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [
+      "assets/img/Champion-Futsal-Arena/1.webp",
+      "assets/img/Champion-Futsal-Arena/2.webp",
+      "assets/img/Champion-Futsal-Arena/3.webp",
+      "assets/img/Champion-Futsal-Arena/4.webp",
+      "assets/img/Champion-Futsal-Arena/5.webp"
+    ],
+    "lapangan": [
+      {
+        "id": "l7-1",
+        "nama": "Lapangan Futsal 1",
+        "olahraga": "Futsal",
+        "harga": 75000
+      },
+      {
+        "id": "l7-2",
+        "nama": "Lapangan Futsal 2",
+        "olahraga": "Futsal",
+        "harga": 75000
+      }
+    ]
+  },  
+  {
+    "id": 9,
+    "nama": "Full House Padel Solo",
+    "provinsi": "Jawa Tengah",
+    "kota": "Kota Surakarta",
+    "alamat": "Jl. Contoh Raya No. 9, Kota Surakarta, Jawa Tengah (alamat dummy)",
+    "olahraga": [
+      "Padel"
+    ],
+    "harga": 100000,
+    "rating": 4.93,
+    "ulasan": 162,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Full House Padel Solo menyediakan lapangan padel di Kota Surakarta. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [
+      "assets/img/Full House Padel Solo/1.jpeg",
+      "assets/img/Full House Padel Solo/2.jpeg",
+      "assets/img/Full House Padel Solo/3.jpeg"
+    ],
+    "lapangan": [
+      {
+        "id": "l9-1",
+        "nama": "Lapangan Padel 1",
+        "olahraga": "Padel",
+        "harga": 100000
+      },
+      {
+        "id": "l9-2",
+        "nama": "Lapangan Padel 2",
+        "olahraga": "Padel",
+        "harga": 100000
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "nama": "Nawa Sport Club",
+    "provinsi": "Jawa Tengah",
+    "kota": "Kabupaten Sukoharjo",
+    "alamat": "Jl. Contoh Raya No. 10, Kabupaten Sukoharjo, Jawa Tengah (alamat dummy)",
+    "olahraga": [
+      "Tennis",
+      "Padel"
+    ],
+    "harga": 70000,
+    "rating": 4.92,
+    "ulasan": 131,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Nawa Sport Club menyediakan lapangan tennis, padel di Kabupaten Sukoharjo. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [
+      "assets/img/Nawa Sport Club/1.jpeg",
+      "assets/img/Nawa Sport Club/3.jpeg",
+      "assets/img/Nawa Sport Club/4.jpeg",
+      "assets/img/Nawa Sport Club/5.jpeg",
+      "assets/img/Nawa Sport Club/6.jpeg",
+      "assets/img/Nawa Sport Club/7.jpeg",
+      "assets/img/Nawa Sport Club/8.jpeg",
+      "assets/img/Nawa Sport Club/9.jpeg"
+    ],
+    "lapangan": [
+      {
+        "id": "l10-1",
+        "nama": "Lapangan Tennis 1",
+        "olahraga": "Tennis",
+        "harga": 70000
+      },
+      {
+        "id": "l10-2",
+        "nama": "Lapangan Tennis 2",
+        "olahraga": "Tennis",
+        "harga": 70000
+      },
+      {
+        "id": "l10-3",
+        "nama": "Lapangan Padel 1",
+        "olahraga": "Padel",
+        "harga": 120000
+      },
+      {
+        "id": "l10-4",
+        "nama": "Lapangan Padel 2",
+        "olahraga": "Padel",
+        "harga": 120000
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "nama": "GOR Badminton HTC",
+    "provinsi": "Jawa Tengah",
+    "kota": "Kabupaten Sukoharjo",
+    "alamat": "Jl. Contoh Raya No. 11, Kabupaten Sukoharjo, Jawa Tengah (alamat dummy)",
+    "olahraga": [
+      "Badminton"
+    ],
+    "harga": 79000,
+    "rating": 5.0,
+    "ulasan": 88,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin"
+    ],
+    "deskripsi": "GOR Badminton HTC menyediakan lapangan badminton di Kabupaten Sukoharjo. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [
+      "assets/img/GOR Badminton HTC/0.webp",
+      "assets/img/GOR Badminton HTC/1.webp",
+      "assets/img/GOR Badminton HTC/2.webp",
+      "assets/img/GOR Badminton HTC/3.webp",
+      "assets/img/GOR Badminton HTC/4.webp",
+      "assets/img/GOR Badminton HTC/5.webp",
+      "assets/img/GOR Badminton HTC/6.webp"
+    ],
+    "lapangan": [
+      {
+        "id": "l11-1",
+        "nama": "Lapangan Badminton 1",
+        "olahraga": "Badminton",
+        "harga": 79000
+      },
+      {
+        "id": "l11-2",
+        "nama": "Lapangan Badminton 2",
+        "olahraga": "Badminton",
+        "harga": 79000
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "nama": "Sky Soccer Solobaru",
+    "provinsi": "Jawa Tengah",
+    "kota": "Kabupaten Sukoharjo",
+    "alamat": "Jl. Contoh Raya No. 12, Kabupaten Sukoharjo, Jawa Tengah (alamat dummy)",
+    "olahraga": [
+      "Mini Soccer"
+    ],
+    "harga": 700000,
+    "rating": 4.7,
+    "ulasan": 120,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Ruang Ganti",
+      "Tribun"
+    ],
+    "deskripsi": "Sky Soccer Solobaru menyediakan lapangan mini soccer di Kabupaten Sukoharjo. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l12-1",
+        "nama": "Lapangan Mini Soccer 1",
+        "olahraga": "Mini Soccer",
+        "harga": 700000
+      },
+      {
+        "id": "l12-2",
+        "nama": "Lapangan Mini Soccer 2",
+        "olahraga": "Mini Soccer",
+        "harga": 700000
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "nama": "Mamba 3x3 Basketball Court",
+    "provinsi": "Jawa Tengah",
+    "kota": "Kabupaten Sukoharjo",
+    "alamat": "Jl. Contoh Raya No. 13, Kabupaten Sukoharjo, Jawa Tengah (alamat dummy)",
+    "olahraga": [
+      "Basketball"
+    ],
+    "harga": 75000,
+    "rating": 5.0,
+    "ulasan": 64,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin"
+    ],
+    "deskripsi": "Mamba 3x3 Basketball Court menyediakan lapangan basketball di Kabupaten Sukoharjo. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l13-1",
+        "nama": "Lapangan Basketball 1",
+        "olahraga": "Basketball",
+        "harga": 75000
+      },
+      {
+        "id": "l13-2",
+        "nama": "Lapangan Basketball 2",
+        "olahraga": "Basketball",
+        "harga": 75000
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "nama": "Padel One Karanganyar",
+    "provinsi": "Jawa Tengah",
+    "kota": "Kabupaten Karanganyar",
+    "alamat": "Jl. Contoh Raya No. 14, Kabupaten Karanganyar, Jawa Tengah (alamat dummy)",
+    "olahraga": [
+      "Padel"
+    ],
+    "harga": 110000,
+    "rating": 4.8,
+    "ulasan": 52,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Padel One Karanganyar menyediakan lapangan padel di Kabupaten Karanganyar. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l14-1",
+        "nama": "Lapangan Padel 1",
+        "olahraga": "Padel",
+        "harga": 110000
+      },
+      {
+        "id": "l14-2",
+        "nama": "Lapangan Padel 2",
+        "olahraga": "Padel",
+        "harga": 110000
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "nama": "Padi Padel & Mini Soccer",
+    "provinsi": "Jawa Tengah",
+    "kota": "Kabupaten Karanganyar",
+    "alamat": "Jl. Contoh Raya No. 15, Kabupaten Karanganyar, Jawa Tengah (alamat dummy)",
+    "olahraga": [
+      "Padel",
+      "Mini Soccer"
+    ],
+    "harga": 105000,
+    "rating": 4.75,
+    "ulasan": 47,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Padi Padel & Mini Soccer menyediakan lapangan padel, mini soccer di Kabupaten Karanganyar. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l15-1",
+        "nama": "Lapangan Padel 1",
+        "olahraga": "Padel",
+        "harga": 105000
+      },
+      {
+        "id": "l15-2",
+        "nama": "Lapangan Padel 2",
+        "olahraga": "Padel",
+        "harga": 105000
+      },
+      {
+        "id": "l15-3",
+        "nama": "Lapangan Mini Soccer 1",
+        "olahraga": "Mini Soccer",
+        "harga": 550000
+      },
+      {
+        "id": "l15-4",
+        "nama": "Lapangan Mini Soccer 2",
+        "olahraga": "Mini Soccer",
+        "harga": 550000
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "nama": "Ooma Padel Sragen",
+    "provinsi": "Jawa Tengah",
+    "kota": "Kabupaten Sragen",
+    "alamat": "Jl. Contoh Raya No. 16, Kabupaten Sragen, Jawa Tengah (alamat dummy)",
+    "olahraga": [
+      "Padel"
+    ],
+    "harga": 100000,
+    "rating": null,
+    "ulasan": 0,
+    "badge": "COMING SOON",
+    "coming_soon": true,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Ooma Padel Sragen menyediakan lapangan padel di Kabupaten Sragen. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l16-1",
+        "nama": "Lapangan Padel 1",
+        "olahraga": "Padel",
+        "harga": 100000
+      },
+      {
+        "id": "l16-2",
+        "nama": "Lapangan Padel 2",
+        "olahraga": "Padel",
+        "harga": 100000
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "nama": "Bandung Futsal Hub",
+    "provinsi": "Jawa Barat",
+    "kota": "Kota Bandung",
+    "alamat": "Jl. Contoh Raya No. 17, Kota Bandung, Jawa Barat (alamat dummy)",
+    "olahraga": [
+      "Futsal"
+    ],
+    "harga": 120000,
+    "rating": 4.78,
+    "ulasan": 205,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Bandung Futsal Hub menyediakan lapangan futsal di Kota Bandung. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l17-1",
+        "nama": "Lapangan Futsal 1",
+        "olahraga": "Futsal",
+        "harga": 120000
+      },
+      {
+        "id": "l17-2",
+        "nama": "Lapangan Futsal 2",
+        "olahraga": "Futsal",
+        "harga": 120000
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "nama": "Dago Mini Soccer Arena",
+    "provinsi": "Jawa Barat",
+    "kota": "Kota Bandung",
+    "alamat": "Jl. Contoh Raya No. 18, Kota Bandung, Jawa Barat (alamat dummy)",
+    "olahraga": [
+      "Mini Soccer"
+    ],
+    "harga": 600000,
+    "rating": 4.69,
+    "ulasan": 98,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Ruang Ganti",
+      "Tribun"
+    ],
+    "deskripsi": "Dago Mini Soccer Arena menyediakan lapangan mini soccer di Kota Bandung. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l18-1",
+        "nama": "Lapangan Mini Soccer 1",
+        "olahraga": "Mini Soccer",
+        "harga": 600000
+      },
+      {
+        "id": "l18-2",
+        "nama": "Lapangan Mini Soccer 2",
+        "olahraga": "Mini Soccer",
+        "harga": 600000
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "nama": "Bekasi Futsal Arena",
+    "provinsi": "Jawa Barat",
+    "kota": "Kota Bekasi",
+    "alamat": "Jl. Contoh Raya No. 19, Kota Bekasi, Jawa Barat (alamat dummy)",
+    "olahraga": [
+      "Futsal"
+    ],
+    "harga": 110000,
+    "rating": 4.74,
+    "ulasan": 143,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin"
+    ],
+    "deskripsi": "Bekasi Futsal Arena menyediakan lapangan futsal di Kota Bekasi. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l19-1",
+        "nama": "Lapangan Futsal 1",
+        "olahraga": "Futsal",
+        "harga": 110000
+      },
+      {
+        "id": "l19-2",
+        "nama": "Lapangan Futsal 2",
+        "olahraga": "Futsal",
+        "harga": 110000
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "nama": "Bogor Mini Soccer Park",
+    "provinsi": "Jawa Barat",
+    "kota": "Kota Bogor",
+    "alamat": "Jl. Contoh Raya No. 20, Kota Bogor, Jawa Barat (alamat dummy)",
+    "olahraga": [
+      "Mini Soccer"
+    ],
+    "harga": 520000,
+    "rating": 4.66,
+    "ulasan": 77,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Ruang Ganti",
+      "Tribun"
+    ],
+    "deskripsi": "Bogor Mini Soccer Park menyediakan lapangan mini soccer di Kota Bogor. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l20-1",
+        "nama": "Lapangan Mini Soccer 1",
+        "olahraga": "Mini Soccer",
+        "harga": 520000
+      },
+      {
+        "id": "l20-2",
+        "nama": "Lapangan Mini Soccer 2",
+        "olahraga": "Mini Soccer",
+        "harga": 520000
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "nama": "Kuningan Futsal Court",
+    "provinsi": "DKI Jakarta",
+    "kota": "Kota Jakarta Selatan",
+    "alamat": "Jl. Contoh Raya No. 21, Kota Jakarta Selatan, DKI Jakarta (alamat dummy)",
+    "olahraga": [
+      "Futsal"
+    ],
+    "harga": 200000,
+    "rating": 4.81,
+    "ulasan": 256,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Kuningan Futsal Court menyediakan lapangan futsal di Kota Jakarta Selatan. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l21-1",
+        "nama": "Lapangan Futsal 1",
+        "olahraga": "Futsal",
+        "harga": 200000
+      },
+      {
+        "id": "l21-2",
+        "nama": "Lapangan Futsal 2",
+        "olahraga": "Futsal",
+        "harga": 200000
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "nama": "Jakarta Padel House",
+    "provinsi": "DKI Jakarta",
+    "kota": "Kota Jakarta Barat",
+    "alamat": "Jl. Contoh Raya No. 22, Kota Jakarta Barat, DKI Jakarta (alamat dummy)",
+    "olahraga": [
+      "Padel"
+    ],
+    "harga": 280000,
+    "rating": 4.86,
+    "ulasan": 178,
+    "badge": "PROMO",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Jakarta Padel House menyediakan lapangan padel di Kota Jakarta Barat. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l22-1",
+        "nama": "Lapangan Padel 1",
+        "olahraga": "Padel",
+        "harga": 280000
+      },
+      {
+        "id": "l22-2",
+        "nama": "Lapangan Padel 2",
+        "olahraga": "Padel",
+        "harga": 280000
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "nama": "Gor Futsal Garuda Tangerang",
+    "provinsi": "Banten",
+    "kota": "Kota Tangerang",
+    "alamat": "Jl. Contoh Raya No. 23, Kota Tangerang, Banten (alamat dummy)",
+    "olahraga": [
+      "Futsal"
+    ],
+    "harga": 215000,
+    "rating": 4.86,
+    "ulasan": 237,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Ruang Ganti",
+      "Tribun"
+    ],
+    "deskripsi": "Gor Futsal Garuda Tangerang menyediakan lapangan futsal di Kota Tangerang. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l23-1",
+        "nama": "Lapangan Futsal 1",
+        "olahraga": "Futsal",
+        "harga": 215000
+      },
+      {
+        "id": "l23-2",
+        "nama": "Lapangan Futsal 2",
+        "olahraga": "Futsal",
+        "harga": 215000
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "nama": "Arena Badminton Jaya Selatan",
+    "provinsi": "Banten",
+    "kota": "Kota Tangerang Selatan",
+    "alamat": "Jl. Contoh Raya No. 24, Kota Tangerang Selatan, Banten (alamat dummy)",
+    "olahraga": [
+      "Badminton"
+    ],
+    "harga": 65000,
+    "rating": 4.76,
+    "ulasan": 158,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin"
+    ],
+    "deskripsi": "Arena Badminton Jaya Selatan menyediakan lapangan badminton di Kota Tangerang Selatan. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l24-1",
+        "nama": "Lapangan Badminton 1",
+        "olahraga": "Badminton",
+        "harga": 65000
+      },
+      {
+        "id": "l24-2",
+        "nama": "Lapangan Badminton 2",
+        "olahraga": "Badminton",
+        "harga": 65000
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "nama": "GOR Basket Cakra Cilegon",
+    "provinsi": "Banten",
+    "kota": "Kota Cilegon",
+    "alamat": "Jl. Contoh Raya No. 26, Kota Cilegon, Banten (alamat dummy)",
+    "olahraga": [
+      "Basketball"
+    ],
+    "harga": 160000,
+    "rating": 4.26,
+    "ulasan": 95,
+    "badge": "PROMO",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Ruang Ganti",
+      "Tribun"
+    ],
+    "deskripsi": "GOR Basket Cakra Cilegon menyediakan lapangan basketball di Kota Cilegon. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l26-1",
+        "nama": "Lapangan Basketball 1",
+        "olahraga": "Basketball",
+        "harga": 160000
+      },
+      {
+        "id": "l26-2",
+        "nama": "Lapangan Basketball 2",
+        "olahraga": "Basketball",
+        "harga": 160000
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "nama": "Court Tennis Cakra Pusat",
+    "provinsi": "DKI Jakarta",
+    "kota": "Kota Jakarta Pusat",
+    "alamat": "Jl. Contoh Raya No. 30, Kota Jakarta Pusat, DKI Jakarta (alamat dummy)",
+    "olahraga": [
+      "Tennis",
+      "Mini Soccer"
+    ],
+    "harga": 160000,
+    "rating": 4.28,
+    "ulasan": 167,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin"
+    ],
+    "deskripsi": "Court Tennis Cakra Pusat menyediakan lapangan tennis, mini soccer di Kota Jakarta Pusat. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l30-1",
+        "nama": "Lapangan Tennis 1",
+        "olahraga": "Tennis",
+        "harga": 160000
+      },
+      {
+        "id": "l30-2",
+        "nama": "Lapangan Tennis 2",
+        "olahraga": "Tennis",
+        "harga": 160000
+      },
+      {
+        "id": "l30-3",
+        "nama": "Lapangan Mini Soccer 1",
+        "olahraga": "Mini Soccer",
+        "harga": 955000
+      },
+      {
+        "id": "l30-4",
+        "nama": "Lapangan Mini Soccer 2",
+        "olahraga": "Mini Soccer",
+        "harga": 955000
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "nama": "Hoops Arena Mitra Timur",
+    "provinsi": "DKI Jakarta",
+    "kota": "Kota Jakarta Timur",
+    "alamat": "Jl. Contoh Raya No. 32, Kota Jakarta Timur, DKI Jakarta (alamat dummy)",
+    "olahraga": [
+      "Basketball"
+    ],
+    "harga": 165000,
+    "rating": 4.8,
+    "ulasan": 136,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Hoops Arena Mitra Timur menyediakan lapangan basketball di Kota Jakarta Timur. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l32-1",
+        "nama": "Lapangan Basketball 1",
+        "olahraga": "Basketball",
+        "harga": 165000
+      },
+      {
+        "id": "l32-2",
+        "nama": "Lapangan Basketball 2",
+        "olahraga": "Basketball",
+        "harga": 165000
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "nama": "Hoops Arena Citra Selatan",
+    "provinsi": "DKI Jakarta",
+    "kota": "Kota Jakarta Selatan",
+    "alamat": "Jl. Contoh Raya No. 34, Kota Jakarta Selatan, DKI Jakarta (alamat dummy)",
+    "olahraga": [
+      "Basketball"
+    ],
+    "harga": 140000,
+    "rating": 4.62,
+    "ulasan": 240,
+    "badge": "PROMO",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Hoops Arena Citra Selatan menyediakan lapangan basketball di Kota Jakarta Selatan. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l34-1",
+        "nama": "Lapangan Basketball 1",
+        "olahraga": "Basketball",
+        "harga": 140000
+      },
+      {
+        "id": "l34-2",
+        "nama": "Lapangan Basketball 2",
+        "olahraga": "Basketball",
+        "harga": 140000
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "nama": "Basket Court Mitra Bandung",
+    "provinsi": "Jawa Barat",
+    "kota": "Kota Bandung",
+    "alamat": "Jl. Contoh Raya No. 41, Kota Bandung, Jawa Barat (alamat dummy)",
+    "olahraga": [
+      "Basketball"
+    ],
+    "harga": 100000,
+    "rating": 4.81,
+    "ulasan": 104,
+    "badge": "PROMO",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin"
+    ],
+    "deskripsi": "Basket Court Mitra Bandung menyediakan lapangan basketball di Kota Bandung. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l41-1",
+        "nama": "Lapangan Basketball 1",
+        "olahraga": "Basketball",
+        "harga": 100000
+      },
+      {
+        "id": "l41-2",
+        "nama": "Lapangan Basketball 2",
+        "olahraga": "Basketball",
+        "harga": 100000
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "nama": "Padel Club Prima Karawang",
+    "provinsi": "Jawa Barat",
+    "kota": "Kabupaten Karawang",
+    "alamat": "Jl. Contoh Raya No. 45, Kabupaten Karawang, Jawa Barat (alamat dummy)",
+    "olahraga": [
+      "Padel"
+    ],
+    "harga": 210000,
+    "rating": 4.69,
+    "ulasan": 52,
+    "badge": "PROMO",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Ruang Ganti",
+      "Tribun"
+    ],
+    "deskripsi": "Padel Club Prima Karawang menyediakan lapangan padel di Kabupaten Karawang. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l45-1",
+        "nama": "Lapangan Padel 1",
+        "olahraga": "Padel",
+        "harga": 210000
+      },
+      {
+        "id": "l45-2",
+        "nama": "Lapangan Padel 2",
+        "olahraga": "Padel",
+        "harga": 210000
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "nama": "Smash Hall Sentosa Garut",
+    "provinsi": "Jawa Barat",
+    "kota": "Kabupaten Garut",
+    "alamat": "Jl. Contoh Raya No. 48, Kabupaten Garut, Jawa Barat (alamat dummy)",
+    "olahraga": [
+      "Badminton"
+    ],
+    "harga": 80000,
+    "rating": 4.55,
+    "ulasan": 91,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Smash Hall Sentosa Garut menyediakan lapangan badminton di Kabupaten Garut. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l48-1",
+        "nama": "Lapangan Badminton 1",
+        "olahraga": "Badminton",
+        "harga": 80000
+      },
+      {
+        "id": "l48-2",
+        "nama": "Lapangan Badminton 2",
+        "olahraga": "Badminton",
+        "harga": 80000
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "nama": "Gor Futsal Mandala Pekalongan",
+    "provinsi": "Jawa Tengah",
+    "kota": "Kota Pekalongan",
+    "alamat": "Jl. Contoh Raya No. 53, Kota Pekalongan, Jawa Tengah (alamat dummy)",
+    "olahraga": [
+      "Futsal"
+    ],
+    "harga": 185000,
+    "rating": 4.68,
+    "ulasan": 35,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Gor Futsal Mandala Pekalongan menyediakan lapangan futsal di Kota Pekalongan. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l53-1",
+        "nama": "Lapangan Futsal 1",
+        "olahraga": "Futsal",
+        "harga": 185000
+      },
+      {
+        "id": "l53-2",
+        "nama": "Lapangan Futsal 2",
+        "olahraga": "Futsal",
+        "harga": 185000
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "nama": "Hoops Arena Cakra Klaten",
+    "provinsi": "Jawa Tengah",
+    "kota": "Kabupaten Klaten",
+    "alamat": "Jl. Contoh Raya No. 57, Kabupaten Klaten, Jawa Tengah (alamat dummy)",
+    "olahraga": [
+      "Basketball"
+    ],
+    "harga": 120000,
+    "rating": 4.86,
+    "ulasan": 183,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Ruang Ganti",
+      "Tribun"
+    ],
+    "deskripsi": "Hoops Arena Cakra Klaten menyediakan lapangan basketball di Kabupaten Klaten. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l57-1",
+        "nama": "Lapangan Basketball 1",
+        "olahraga": "Basketball",
+        "harga": 120000
+      },
+      {
+        "id": "l57-2",
+        "nama": "Lapangan Basketball 2",
+        "olahraga": "Basketball",
+        "harga": 120000
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "nama": "Tennis Club Merdeka Semarang",
+    "provinsi": "Jawa Tengah",
+    "kota": "Kota Semarang",
+    "alamat": "Jl. Contoh Raya No. 60, Kota Semarang, Jawa Tengah (alamat dummy)",
+    "olahraga": [
+      "Tennis"
+    ],
+    "harga": 70000,
+    "rating": 4.95,
+    "ulasan": 49,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin"
+    ],
+    "deskripsi": "Tennis Club Merdeka Semarang menyediakan lapangan tennis di Kota Semarang. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l60-1",
+        "nama": "Lapangan Tennis 1",
+        "olahraga": "Tennis",
+        "harga": 70000
+      },
+      {
+        "id": "l60-2",
+        "nama": "Lapangan Tennis 2",
+        "olahraga": "Tennis",
+        "harga": 70000
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "nama": "Futsal Center Nusantara Yogyakarta",
+    "provinsi": "DI Yogyakarta",
+    "kota": "Kota Yogyakarta",
+    "alamat": "Jl. Contoh Raya No. 61, Kota Yogyakarta, DI Yogyakarta (alamat dummy)",
+    "olahraga": [
+      "Futsal",
+      "Badminton"
+    ],
+    "harga": 90000,
+    "rating": 4.52,
+    "ulasan": 40,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Futsal Center Nusantara Yogyakarta menyediakan lapangan futsal, badminton di Kota Yogyakarta. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l61-1",
+        "nama": "Lapangan Futsal 1",
+        "olahraga": "Futsal",
+        "harga": 160000
+      },
+      {
+        "id": "l61-2",
+        "nama": "Lapangan Futsal 2",
+        "olahraga": "Futsal",
+        "harga": 160000
+      },
+      {
+        "id": "l61-3",
+        "nama": "Lapangan Badminton 1",
+        "olahraga": "Badminton",
+        "harga": 90000
+      },
+      {
+        "id": "l61-4",
+        "nama": "Lapangan Badminton 2",
+        "olahraga": "Badminton",
+        "harga": 90000
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "nama": "GOR Badminton Mitra Sleman",
+    "provinsi": "DI Yogyakarta",
+    "kota": "Kabupaten Sleman",
+    "alamat": "Jl. Contoh Raya No. 62, Kabupaten Sleman, DI Yogyakarta (alamat dummy)",
+    "olahraga": [
+      "Badminton",
+      "Tennis"
+    ],
+    "harga": 70000,
+    "rating": 4.22,
+    "ulasan": 191,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Ruang Ganti",
+      "Tribun"
+    ],
+    "deskripsi": "GOR Badminton Mitra Sleman menyediakan lapangan badminton, tennis di Kabupaten Sleman. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l62-1",
+        "nama": "Lapangan Badminton 1",
+        "olahraga": "Badminton",
+        "harga": 70000
+      },
+      {
+        "id": "l62-2",
+        "nama": "Lapangan Badminton 2",
+        "olahraga": "Badminton",
+        "harga": 70000
+      },
+      {
+        "id": "l62-3",
+        "nama": "Lapangan Tennis 1",
+        "olahraga": "Tennis",
+        "harga": 120000
+      },
+      {
+        "id": "l62-4",
+        "nama": "Lapangan Tennis 2",
+        "olahraga": "Tennis",
+        "harga": 120000
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "nama": "Tennis Club Prima Bantul",
+    "provinsi": "DI Yogyakarta",
+    "kota": "Kabupaten Bantul",
+    "alamat": "Jl. Contoh Raya No. 63, Kabupaten Bantul, DI Yogyakarta (alamat dummy)",
+    "olahraga": [
+      "Tennis"
+    ],
+    "harga": 75000,
+    "rating": 4.22,
+    "ulasan": 78,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Tennis Club Prima Bantul menyediakan lapangan tennis di Kabupaten Bantul. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l63-1",
+        "nama": "Lapangan Tennis 1",
+        "olahraga": "Tennis",
+        "harga": 75000
+      },
+      {
+        "id": "l63-2",
+        "nama": "Lapangan Tennis 2",
+        "olahraga": "Tennis",
+        "harga": 75000
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "nama": "Padel Club Jaya Yogyakarta",
+    "provinsi": "DI Yogyakarta",
+    "kota": "Kota Yogyakarta",
+    "alamat": "Jl. Contoh Raya No. 66, Kota Yogyakarta, DI Yogyakarta (alamat dummy)",
+    "olahraga": [
+      "Padel"
+    ],
+    "harga": 225000,
+    "rating": 4.24,
+    "ulasan": 64,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin"
+    ],
+    "deskripsi": "Padel Club Jaya Yogyakarta menyediakan lapangan padel di Kota Yogyakarta. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l66-1",
+        "nama": "Lapangan Padel 1",
+        "olahraga": "Padel",
+        "harga": 225000
+      },
+      {
+        "id": "l66-2",
+        "nama": "Lapangan Padel 2",
+        "olahraga": "Padel",
+        "harga": 225000
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "nama": "Mini Soccer Park Bintang Surabaya",
+    "provinsi": "Jawa Timur",
+    "kota": "Kota Surabaya",
+    "alamat": "Jl. Contoh Raya No. 69, Kota Surabaya, Jawa Timur (alamat dummy)",
+    "olahraga": [
+      "Mini Soccer"
+    ],
+    "harga": 370000,
+    "rating": 4.81,
+    "ulasan": 221,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin",
+      "Ruang Ganti",
+      "Wi-Fi"
+    ],
+    "deskripsi": "Mini Soccer Park Bintang Surabaya menyediakan lapangan mini soccer di Kota Surabaya. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l69-1",
+        "nama": "Lapangan Mini Soccer 1",
+        "olahraga": "Mini Soccer",
+        "harga": 370000
+      },
+      {
+        "id": "l69-2",
+        "nama": "Lapangan Mini Soccer 2",
+        "olahraga": "Mini Soccer",
+        "harga": 370000
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "nama": "Pickle Club Sentosa Malang",
+    "provinsi": "Jawa Timur",
+    "kota": "Kota Malang",
+    "alamat": "Jl. Contoh Raya No. 70, Kota Malang, Jawa Timur (alamat dummy)",
+    "olahraga": [
+      "Pickleball",
+      "Mini Soccer"
+    ],
+    "harga": 35000,
+    "rating": 4.3,
+    "ulasan": 197,
+    "badge": "PROMO",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin"
+    ],
+    "deskripsi": "Pickle Club Sentosa Malang menyediakan lapangan pickleball, mini soccer di Kota Malang. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l70-1",
+        "nama": "Lapangan Pickleball 1",
+        "olahraga": "Pickleball",
+        "harga": 35000
+      },
+      {
+        "id": "l70-2",
+        "nama": "Lapangan Pickleball 2",
+        "olahraga": "Pickleball",
+        "harga": 35000
+      },
+      {
+        "id": "l70-3",
+        "nama": "Lapangan Mini Soccer 1",
+        "olahraga": "Mini Soccer",
+        "harga": 470000
+      },
+      {
+        "id": "l70-4",
+        "nama": "Lapangan Mini Soccer 2",
+        "olahraga": "Mini Soccer",
+        "harga": 470000
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "nama": "Soccer Field Mitra Sidoarjo",
+    "provinsi": "Jawa Timur",
+    "kota": "Kabupaten Sidoarjo",
+    "alamat": "Jl. Contoh Raya No. 75, Kabupaten Sidoarjo, Jawa Timur (alamat dummy)",
+    "olahraga": [
+      "Mini Soccer"
+    ],
+    "harga": 315000,
+    "rating": 4.31,
+    "ulasan": 15,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Ruang Ganti",
+      "Tribun"
+    ],
+    "deskripsi": "Soccer Field Mitra Sidoarjo menyediakan lapangan mini soccer di Kabupaten Sidoarjo. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l75-1",
+        "nama": "Lapangan Mini Soccer 1",
+        "olahraga": "Mini Soccer",
+        "harga": 315000
+      },
+      {
+        "id": "l75-2",
+        "nama": "Lapangan Mini Soccer 2",
+        "olahraga": "Mini Soccer",
+        "harga": 315000
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "nama": "Hoops Arena Jaya Ponorogo",
+    "provinsi": "Jawa Timur",
+    "kota": "Kabupaten Ponorogo",
+    "alamat": "Jl. Contoh Raya No. 78, Kabupaten Ponorogo, Jawa Timur (alamat dummy)",
+    "olahraga": [
+      "Basketball"
+    ],
+    "harga": 125000,
+    "rating": 4.88,
+    "ulasan": 38,
+    "badge": "",
+    "coming_soon": false,
+    "jam_buka": 8,
+    "jam_tutup": 22,
+    "fasilitas": [
+      "Parkir",
+      "Toilet",
+      "Musala",
+      "Kantin"
+    ],
+    "deskripsi": "Hoops Arena Jaya Ponorogo menyediakan lapangan basketball di Kabupaten Ponorogo. Data venue ini adalah data dummy untuk keperluan tugas.",
+    "foto": [],
+    "lapangan": [
+      {
+        "id": "l78-1",
+        "nama": "Lapangan Basketball 1",
+        "olahraga": "Basketball",
+        "harga": 125000
+      },
+      {
+        "id": "l78-2",
+        "nama": "Lapangan Basketball 2",
+        "olahraga": "Basketball",
+        "harga": 125000
+      }
+    ]
+  }
+]

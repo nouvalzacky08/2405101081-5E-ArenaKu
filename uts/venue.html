@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sewa Lapangan - ArenaKu</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="venue">
+  <div id="site-header"></div>
+
+  <div class="page-head">
+    <div class="container">
+      <h1>Sewa Lapangan</h1>
+      <p>Temukan venue sesuai olahraga, lokasi, dan budgetmu. Tidak perlu login untuk menjelajah.</p>
+    </div>
+  </div>
+
+  <div class="container layout">
+    <aside class="card filter-panel">
+      <h3>Filter</h3>
+      <div class="field"><label for="f-cari">Nama venue / lokasi</label><input type="text" id="f-cari" placeholder="Cari..."></div>
+      <div class="field"><label for="f-cabang">Cabang olahraga</label><select id="f-cabang"></select></div>
+      <div class="field"><label for="f-prov">Provinsi</label><select id="f-prov"></select></div>
+      <div class="field"><label for="f-kota">Kota / Kabupaten</label><select id="f-kota"></select></div>
+      <div class="field"><label>Harga mulai per sesi (Rp)</label>
+        <div class="form-row"><input type="number" id="f-min" placeholder="Min" min="0" step="5000"><input type="number" id="f-max" placeholder="Maks" min="0" step="5000"></div></div>
+      <button type="button" id="reset" class="btn btn-outline btn-block">Reset Filter</button>
+    </aside>
+
+    <section style="padding:0">
+      <div class="hasil-bar">
+        <strong id="jumlah"></strong>
+        <label>Urutkan:
+          <select id="f-urut">
+            <option value="rekomendasi">Rekomendasi (Madiun dulu)</option>
+            <option value="rating">Rating tertinggi</option>
+            <option value="murah">Harga terendah</option>
+            <option value="mahal">Harga tertinggi</option>
+          </select>
+        </label>
+      </div>
+      <div class="grid grid-3" id="daftar-venue"></div>
+      <div class="center" id="lebih-wrap" style="margin-top:24px" hidden><button type="button" class="btn btn-outline" id="lebih">Tampilkan lebih banyak</button></div>
+    </section>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="js/app.js"></script>
+  <script src="js/venue.js"></script>
+</body>
+</html>
